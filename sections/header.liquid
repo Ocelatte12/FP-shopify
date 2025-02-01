@@ -1,0 +1,12 @@
+<div data-animation="default" class="nav_component w-nav" data-easing2="ease" fs-scrolldisable-element="smart-nav" data-easing="ease" data-collapse="medium" data-w-id="1f4a994c-7640-c194-e1f7-4193b5553f7b" role="banner" data-duration="400" x-data=""><div class="nav_container"><div class="w-layout-hflex flex-block"><div class="nav_menu-button w-nav-button"><div class="menu-icon"><img loading="lazy" src="{{ 'hamburger-menu-svg.svg' | asset_url }}" alt="" class="header-icons">
+</div></div><a href="{{ routes.root_url }}" li-object:href="routes.root_url" class="nav_logo-link w-nav-brand"><img sizes="(max-width: 479px) 53vw, 80px" srcset="{{ 'FOR-WARD-23-p-500.png' | asset_url }} 500w, {{ 'FOR-WARD-23-p-800.png' | asset_url }} 800w, {{ 'FOR-WARD-23.png' | asset_url }} 1000w" alt="" src="{{ 'FOR-WARD-23.png' | asset_url }}" class="brand-logo">
+</a><nav role="navigation" id="w-node-_1f4a994c-7640-c194-e1f7-4193b5553f7f-b641c10b" class="nav_menu is-page-height-tablet w-nav-menu">{% for link in linklists['main-menu'].links %}    <div li-for="link in linklists['main-menu'].links">
+                                    
+                            <a li-object:href="link.url" href="{{ link.url }}" class="nav_link-item w-inline-block"><div><div li-object="link.title">{{ link.title }}</div></div></a>
+                            
+                        </div>
+{% endfor %}</nav></div><div class="nav_shop-icons">{% if shop.customer_accounts_optional %}    <div li-if="shop.customer_accounts_optional" class="nav_account">
+    <a href="{% if customer %}{{ routes.account_url }}{% else %}{{ routes.account_login_url }}{% endif %}" class="nav_shop-icon w-inline-block"><img loading="lazy" src="{{ 'account-icon-white.svg' | asset_url }}" alt="" class="header-icons">
+</a>    </div>
+{% endif %}{% render 'mini_cart' %}
+</div></div></div> {% schema %} {"tag":"div","name":"header","class":"section_navbar","presets":[{"name":"header","category":"Liquify","blocks":[]}]} {% endschema %}
